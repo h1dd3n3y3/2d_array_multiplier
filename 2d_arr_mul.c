@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h> // exit()
-#include <unistd.h> // pipe(), fork()
-#include <string.h> // atoi()
-#include <time.h> // time()
-#include <math.h> // floor(), log10(): gcc must contain the "-lm" flag
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <time.h>
+#include <math.h> // floor(), log10(): gcc must contain the "-lm" argument
 
 #define rows1 atoi(argv[1]) //
 #define cols1 atoi(argv[2]) // atoi(const char* str) function converts string to integer values
@@ -18,12 +18,12 @@ void usage(char *exe) { // Display usage message
 }
 
 void initArr(int rows, int cols, int arr[rows][cols]) { // Initialize the given array
-    for (int r = 0; r < rows; r++) // In range of array's rows
-        for (int c = 0; c < cols; c++) // In range of array's columns
-            arr[r][c] = (rand() % 20) + 1; // Assign and save a random number between 1-20 to the corresponding cell
+    for (int r = 0; r < rows; r++)
+        for (int c = 0; c < cols; c++)
+            arr[r][c] = (rand() % 20) + 1;
 }
 
-int getMaxDigitLen(int rows, int cols, int arr[rows][cols]) {
+int getMaxDigitLen(int rows, int cols, int arr[rows][cols]) { // Find array's number with the most digits
     int maxDigitLen = floor(log10(arr[0][0])) + 1; // Assume the first array number has the most digits
     int newDigitLen;
 
@@ -38,7 +38,7 @@ int getMaxDigitLen(int rows, int cols, int arr[rows][cols]) {
 }
 
 void printArr(int rows, int cols, int arr[rows][cols], char* name) { // Print the given array
-    int maxDigitLen = getMaxDigitLen(rows, cols, arr); // Flag to fit 3-digit numbers inside printed array box
+    int maxDigitLen = getMaxDigitLen(rows, cols, arr);
     int currDigitLen;
 
     // Text decoration before first row
@@ -79,9 +79,9 @@ int main(int argc, char **argv) {
         return 2;
     }
 
-    pid_t pid; // Variable to store fork() result
-    int arr1[rows1][cols1], arr2[rows2][cols2], arr3[rows1][cols2]; // 2D arrays to store numbers
-    int fd_row[2], fd_col[2], fd_res[2]; // Arrays to store pipe file descriptors
+    pid_t pid;
+    int arr1[rows1][cols1], arr2[rows2][cols2], arr3[rows1][cols2];
+    int fd_row[2], fd_col[2], fd_res[2];
 
     srand(time(0)); // Initialize srand() properely with the time of OS startup till the program runs, so rand() can generate different results every time called
 
