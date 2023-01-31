@@ -1,0 +1,1 @@
+final: gcc 2d_arr_mul.c -o 2d_arr_mul -lm
