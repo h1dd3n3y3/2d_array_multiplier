@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <time.h> 
+#include <time.h> ///
 #include <math.h> // floor(), log10(): gcc must contain the "-lm" argument
 
 #define rows1 atoi(argv[1]) //
