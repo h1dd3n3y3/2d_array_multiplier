@@ -1,6 +1,6 @@
 # 2D-array Multiplier
-This is a UNIX OS intended program, that multiplies 2 2D-arrays, using multiple process generation and Inter-process Communication (IPC)  
-and displays the output array to your terminal screen.  
+This is a UNIX OS intended program, that multiplies two 2D-arrays, containing random numbers inside 1-20 range, using multiple process generation and Inter-Process Communication (IPC)  
+displaying all three arrays to your terminal screen.  
 
 ## Compile
   * ### Method 1 (easiest):
