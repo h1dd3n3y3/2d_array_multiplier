@@ -1,4 +1,4 @@
-# 2D-array Multiplier
+# 2D-Array Multiplier
 This is a UNIX OS intended program, that multiplies two 2D-arrays, containing random numbers inside 1-20 range, using multiple process generation and Inter-Process Communication (IPC)  
 displaying all three arrays to your terminal screen.  
 
